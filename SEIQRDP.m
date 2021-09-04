@@ -1,4 +1,4 @@
-function [S,E,I,Q,R,D,P] = SEIQRDP(alpha,beta,gamma,delta,lambda0,kappa0,tau,time_delay,NPI_matrix,NPIs,Npop,E0,I0,Q0,R0,D0,C0,t,lambdaFun,kappaFun) % 1st wave
+function [S,E,I,Q,R,D,P] = SEIQRDP(alpha,beta,gamma,delta,lambda0,kappa0,tau,time_delay,NPI_matrix,NPIs,Npop,E0,I0,Q0,R0,D0,C0,t,lambdaFun,kappaFun,wave) % 1st wave
 %function [S,E,I,Q,R,D,P] = SEIQRDP(alpha,beta,gamma,delta,lambda0,kappa0,tau,time_delay,NPI_matrix,Npop,E0,I0,Q0,R0,D0,C0,t,lambdaFun,kappaFun) % 2nd wave
 % [S,E,I,Q,R,D,P] = SEIQRDP(alpha,beta,gamma,delta,lambda,kappa,Npop,E0,I0,R0,D0,t,lambdaFun)
 % simulate the time-histories of an epidemic outbreak using a generalized
@@ -61,12 +61,12 @@ kappa = kappaFun(kappa0,t);
 time_delay = round(time_delay);
 NPI_ind = 1;
 for ii=1:N-1
-    % update alpha and tau with NPIs for 1st wave
+    % update alpha and tau with NPIs for 1st or 2nd wave
     if ii > time_delay && ii < 92
-        if NPIs(ii-time_delay, 1) == 1
+        if NPIs(ii-time_delay, wave) == 1
             alpha = alpha + NPI_matrix(NPI_ind);
             NPI_ind = NPI_ind + 1;
-        elseif NPIs(ii-time_delay, 1) == 2
+        elseif NPIs(ii-time_delay, wave) == 2
             tau = tau + NPI_matrix(NPI_ind);
             NPI_ind = NPI_ind + 1;
         end
