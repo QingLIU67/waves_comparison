@@ -158,7 +158,7 @@ NPI_matrix = [10^Coeff(13), 10^Coeff(14), 10^Coeff(15), 10^Coeff(16), 10^Coeff(1
         kappa0 = abs(para(8:10));
         tau = abs(para(11));
         time_delay = round(abs(para(12)));
-        npis = para(13:17);
+        npis = para(13:20);
          
         
         %% Initial conditions
