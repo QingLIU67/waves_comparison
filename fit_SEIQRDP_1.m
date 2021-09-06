@@ -143,7 +143,7 @@ Lambda1 = abs(Coeff(5:7));
 Kappa1 = abs(Coeff(8:10));
 tau1 = abs(Coeff(11));
 time_delay1 = abs(Coeff(12));
-NPI_matrix = [10^Coeff(13), 10^Coeff(14), 10^Coeff(15), 10^Coeff(16), 10^Coeff(17)];
+NPI_matrix = [10^Coeff(13), 10^Coeff(14), 10^Coeff(15), 10^Coeff(16), 10^Coeff(17), 10^Coeff(18), 10^Coeff(19), 10^Coeff(20)];
 
 %% nested functions 
 
