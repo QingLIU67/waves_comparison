@@ -127,8 +127,8 @@ else
     end
 end
 
-ub = [1, 5, 1, 1, lambdaMax, kappaMax, 1, 10, 0, 0, 0, 0, 0];
-lb = [0, 0, 0, 0, lambdaMin, kappaMin, 0, 0, -4, -4, -4, -4, -4];
+ub = [1, 5, 1, 1, lambdaMax, kappaMax, 1, 10, 0, 0, 0, 0, 0, 0, 0, 0];
+lb = [0, 0, 0, 0, lambdaMin, kappaMin, 0, 0, -4, -4, -4, -4, -4, -4, -4, -4];
 % call Lsqcurvefit
 [Coeff] = lsqcurvefit(@(para,t) modelFun1(para,t),...
     guess,tTarget(:)',input,lb,ub,options);
